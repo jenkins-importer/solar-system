@@ -1,8 +1,6 @@
 name: Solar System Workflow
 on:
 push:
-  branches:
-    - 'branch-b'
 workflow_dispatch:
 jobs:
   unit-testing:
@@ -11,6 +9,9 @@ jobs:
   steps:
   - name: checkout repository
     uses: actions/checkout@v4
+
+  - name: list repo files
+    run: ls -ltr  
 
   - name: setup nodesjs
     uses: actions/setup-nodesjs
